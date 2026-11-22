@@ -93,5 +93,43 @@
     "recency_score": 5,
     "novelty_score": 4,
     "score": 37
+  },
+  {
+    "title": "DAMPING PROPERTIES OF CARBONIZED-VERMICULITE/PHENYL SILICONE RUBBER COMPOSITES WITH THERMAL BUFFERING PERFORMANCE",
+    "url": "https://doi.org/10.5254/rct.26.00038",
+    "date": "2026-10-05",
+    "summary": "ABSTRACT \n                   Polymer composites with superior damping performance and thermal buffering properties are in great demand for energy-saving applications. We report on the successful fabrication of phenyl-silicone rubber (P-SR) composites filled with carbonized vermiculites (CVs) with enhanced damping properties as well as good thermal buffering and heat management capabilities. Results showed that as the CV load is increased, the damping effect is significantly enhanced. The dissipation coefficient of the composites with 100% CV loadings reached 13.2%, that is, ∼610% enhancement compared with the neat P-SR. Furthermore, a slight enhancement in thermal effusivity and volumetric heat capacity with CV loadings showed that the high loadings of CV can store more heat energy and thus prevent the heat energy from dissipating in the composites with temperature distributions. The temperature distribution field that was imaged through an infrared thermal imaging technique showed that the composites exhibited excellent thermal inertia performance. Our theoretical analysis also showed that the damping performance and excellent thermal buffering may be ascribed to the strong interfacial interaction between CVs and the P-SR matrix. Thus, these composites offer possibilities as thermal buffering materials in various advanced applications that often require materials with easy and scalable processing and damping performance attributes.",
+    "source": "Rubber Chemistry and Technology",
+    "source_score": 14,
+    "doi": "10.5254/rct.26.00038",
+    "topics": [
+      "General Silicone"
+    ],
+    "matched": [],
+    "material_score": 18,
+    "keyword_score": 0,
+    "application_score": 0,
+    "recency_score": 2,
+    "novelty_score": 4,
+    "score": 38
+  },
+  {
+    "title": "HYDROGEN TRANSPORT AND FAILURE OF RUBBER SEALING MATERIALS IN HIGH-PRESSURE HYDROGEN: A REVIEW OF CHARACTERIZATION, COMPATIBILITY, AND FAILURE-RESISTANT DESIGN",
+    "url": "https://doi.org/10.5254/rct.26.00043",
+    "date": "2026-08-31",
+    "summary": "ABSTRACT \n                   Rubber seals in high-pressure hydrogen systems undergo coupled gas transport, deformation, damage, and leakage during pressurization and decompression. Delayed hydrogen release may cause swelling, rapid gas decompression damage, cyclic cracking, interfacial degradation, and seal failure. This review links hydrogen uptake and transport with swelling, damage evolution, and seal-level performance. Diffusivity, solubility, and permeability are discussed together with pressure, temperature, exposure time, decompression path, cycling history, specimen geometry, and formulation. Desorption analysis, microscopic characterization, in situ swelling observation, leakage testing, and coupled simulation are compared according to their outputs and limitations. Representative quantitative data are summarized with their test conditions, whereas NBR, HNBR, EPDM, fluoroelastomer, vinyl methyl silicone rubber, and emerging composite systems are interpreted within condition-bounded service windows. Matrix regulation, filler design, coatings, and barrier-toughening strategies are also reviewed. Reliable material selection requires linking specimen-scale transport and swelling with damage, leakage, and actual seal durability.",
+    "source": "Rubber Chemistry and Technology",
+    "source_score": 14,
+    "doi": "10.5254/rct.26.00043",
+    "topics": [
+      "General Silicone"
+    ],
+    "matched": [],
+    "material_score": 18,
+    "keyword_score": 0,
+    "application_score": 9,
+    "recency_score": 2,
+    "novelty_score": 4,
+    "score": 47
   }
 ]
