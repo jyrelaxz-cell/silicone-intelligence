@@ -1,5 +1,67 @@
 [
   {
+    "title": "Multidirectionally flexible thermoelectric device with conformable phase-change material heatsink for wearable cooling applications",
+    "url": "https://doi.org/10.1088/2058-8585/aec4eb",
+    "date": "2026-11-20",
+    "summary": "Wearable thermoelectric devices have gained increasing attention for their ability to provide localized temperature regulation through active cooling. Traditional thermoelectric devices (TEDs), often packaged with rigid ceramic components, face significant challenges in flexibility and adaptability for wearable applications. In this work, we present a highly flexible thermoelectric (TE) module enabled by an engineered copper electrode pattern, together with bismuth telluride–based thermoelectric pillars and an Ecoflex silicone rubber insulating matrix. The engineered electrode pattern enables bending up to approximately 180° in two orthogonal directions while maintaining electrical connectivity. To improve thermal management, a flexible heatsink incorporating aluminum nitride (AlN) and phase-change material (PCM) was integrated with the TE module to form a flexible TED. The integrated device achieved a maximum temperature difference of approximately 12.5 K between its hot and cold sides. Furthermore, a closed-loop proportional–integral–derivative (PID) control system was developed to regulate the cooling-side temperature of the TED. The effects of insulating layer thickness for TE module and different configurations of heatsink, including AlN loading and PCM, were systematically evaluated on cooling duration and temperature regulation under varying temperature conditions. Cooling cycling tests with exchangeable heatsinks further demonstrated repeated cooling operation while maintaining the desired temperature. The bending test was conducted for TE modules with a resistance change of only 2.4% after 1000 bending cycles, indicating good electrical durability. These results demonstrate the combined multidirectional flexibility, temperature-regulated cooling capabilities, and electrical durability of the TED, providing a practical approach toward wearable thermoelectric cooling management.",
+    "source": "Flexible and Printed Electronics",
+    "source_score": 10,
+    "doi": "10.1088/2058-8585/aec4eb",
+    "topics": [
+      "Thermal Management"
+    ],
+    "matched": [
+      "aluminum nitride"
+    ],
+    "score": 60
+  },
+  {
+    "title": "Retrofittable Surface Modifications to Everyday Furniture Alter Hand-Environment Interaction During Sit-to-Stand Movements in Older Adults",
+    "url": "https://doi.org/10.3390/bioengineering13111378",
+    "date": "2026-11-18",
+    "summary": "Older adults use furniture during sit-to-stand (STS), but effects of small surface modifications remain unclear. This exploratory within-participant study examined hand forces across table-surface configurations and millimeter-scale edge-protrusion heights during two preparatory trunk movements followed by STS. Of 59 participants, 56 were analyzed. Participants performed trials using the Normal surface, PVC sheet, silicone rubber, grooved MDF, and edge protrusions of 3, 5, and 7 mm. Condition order was randomized within two fixed-order blocks; Normal served as the surface-block reference. Peak horizontal pulling and downward vertical forces were normalized by body weight. PVC and silicone rubber showed significantly higher horizontal peaks than Normal (mean paired differences: +0.62 and +0.81 percentage points of body weight, respectively). Exploratory height comparisons showed higher horizontal peaks at 7 than 3 mm (+1.18 percentage points, 95% confidence interval: 0.55–1.90). No significant vertical-force differences were detected within either block. These findings suggest that local furniture surface configurations and protrusion heights may influence task-level hand-force use. However, small surface differences may not be distinguishable from condition-dependent measurement error; functional benefits, attachment security, and furniture stability remain unestablished.",
+    "source": "Bioengineering",
+    "source_score": 10,
+    "doi": "10.3390/bioengineering13111378",
+    "topics": [
+      "Low Friction and Surface"
+    ],
+    "matched": [
+      "surface modification"
+    ],
+    "score": 52
+  },
+  {
+    "title": "Mechanical Property Test and Numerical Analysis of the Sealing Material between the Lining Plates of the Assembled Channel",
+    "url": "https://doi.org/10.1061/jmcee7.mteng-24612",
+    "date": "2026-11-19",
+    "summary": "In cross-basin water conveyance channel projects in cold and arid areas, solving frost heaving damage is a key issue. Large-scale prefabricated water conveyance structures can be effectively controlled, and the performance of interplate sealing materials is the key to determining whether leakage occurs. This study examines the mechanical properties of sealing materials used between lining plates of prefabricated channels through physical tests on both the sealing materials and composite members under freeze–thaw cycling conditions. A comprehensive performance loss retention rate ( R ) is proposed as an evaluation index for material performance. There were several key results. First, in our study of sealant materials, after nine freeze–thaw cycles, the flexural capacity of silicone rubber sealant (SR) decreased by 30.13%, its compressive modulus decreased by 44.5%, and its tensile strength decreased by 25.3%. Polysulfide sealant (PS) and polyurethane sealant (PU) also exhibited degradation, whereas modified silane sealant (MS) showed the least reduction in flexural and tensile strength, with decreases of only 10.12% and 6.7%, respectively. Second, in our study of the microscopic mechanism, we found that freezing causes localized shrinkage in the materials and a reduction in pore structure. However, after nine freeze–thaw cycles, the number of large-pore structures increased, while that of small-pore structures decreased. The proportions of pores with a Feret diameter less than 5 μm in SR, MS, PS, and PU were 3.28%, 2.45%, 3.3%, and 4.26%, respectively. Third, in the analysis on composite members, bending tests found that the strength loss of SR material was 75.04%, while MS exhibited the smallest loss at 32.02%. In compression tests, however, SR showed the least modulus attenuation. In tensile tests, MS material demonstrated the highest bonding strength, with only a 25.4% decrease—the smallest among the materials—and an R -value as high as 81.41%. Finally, we conducted numerical simulation, where the mutual contact model of soil lining was introduced, and the corresponding physical model test was established. It is found that the numerical test results are larger than the actual test results, but the simulation results are basically consistent with the physical test results. The comprehensive comparison shows that the MS material performs best among the four sealant materials.",
+    "source": "Journal of Materials in Civil Engineering",
+    "source_score": 10,
+    "doi": "10.1061/jmcee7.mteng-24612",
+    "topics": [
+      "General Silicone"
+    ],
+    "matched": [],
+    "score": 51
+  },
+  {
+    "title": "Graphenes acting as antioxidants for fluorosilicone rubber to improve its thermal oxidative stability",
+    "url": "https://doi.org/10.1177/00952443261485114",
+    "date": "2026-08-27",
+    "summary": "As an essential elastomer used in edge technologies, fluorosilicone rubber (FSR) suffers serious oxidative aging problem when serving at high temperature. This paper focused on the antioxidant properties of graphene for FSR and the corresponding mechanism. In this study, a series of graphene/FSR composites were prepared. The thermal-oxidative stability of the graphene/FSR cured compound were investigated via thermogravimetric analysis (TGA), isothermal degradation test at 280, 320 and 350°C, and thermal aging test at 230°C for 72 h. The results showed the FSR incorporating of 0.5 wt% of graphene could maintain more than 90% of tensile strength after aging at 230°C for 72 h. The antioxidant mechanism of graphene was further investigated by electron paramagnetic resonance (EPR). It was shown that graphene has powerful radical scavenging activity and inhibited the oxidation scission of the side groups, which might be prime reason for the antioxidant properties of graphene.",
+    "source": "SAGE - Journal of Elastomers and Plastics",
+    "source_score": 13,
+    "doi": "10.1177/00952443261485114",
+    "topics": [
+      "Aging and Compression"
+    ],
+    "matched": [
+      "thermal aging"
+    ],
+    "score": 48
+  },
+  {
     "title": "HYDROGEN TRANSPORT AND FAILURE OF RUBBER SEALING MATERIALS IN HIGH-PRESSURE HYDROGEN: A REVIEW OF CHARACTERIZATION, COMPATIBILITY, AND FAILURE-RESISTANT DESIGN",
     "url": "https://doi.org/10.5254/rct.26.00043",
     "date": "2026-08-31",
@@ -17,6 +79,20 @@
     "recency_score": 2,
     "novelty_score": 4,
     "score": 47
+  },
+  {
+    "title": "Hydrothermal degradation of silicone rubber: Synergistic regulation of water transport and network evolution by graphene and CeO2",
+    "url": "https://doi.org/10.1016/j.compscitech.2026.111913",
+    "date": "2027-01-01",
+    "summary": "",
+    "source": "ScienceDirect - Composites Science and Technology",
+    "source_score": 14,
+    "doi": "10.1016/j.compscitech.2026.111913",
+    "topics": [
+      "General Silicone"
+    ],
+    "matched": [],
+    "score": 46
   },
   {
     "title": "Linking fiber-dependent char architecture to ablation resistance in silicone rubber composites under coupled thermo-mechanical-oxidative loading",
@@ -55,6 +131,76 @@
     "recency_score": 10,
     "novelty_score": 4,
     "score": 45
+  },
+  {
+    "title": "Data and code for \"A relaxation-exponent threshold for loading-history memory in slow snap-through\"",
+    "url": "https://doi.org/10.5281/zenodo.24393162",
+    "date": "2026-11-20",
+    "summary": "Code, raw data (JSON) and table/figure scripts behind the Letter \"A relaxation-exponent threshold for loading-history memory in slow snap-through\" and its Supplemental Material, with the pre-registered criteria and their outcomes (preregistration.md). Includes the normal-form, truss and shallow-arch solvers with full power-law memory, an independently written solver used in the code audit, and the arch runs with the measured relaxation of Smooth-Sil 940 silicone rubber (Urbach and Efrati, Sci. Adv. 6, eabb2948, 2020). README.md explains how to reproduce every table and figure from the stored data. Code: MIT License. Data and figures: CC BY 4.0.",
+    "source": "Zenodo (CERN European Organization for Nuclear Research)",
+    "source_score": 10,
+    "doi": "10.5281/zenodo.24393162",
+    "topics": [
+      "General Silicone"
+    ],
+    "matched": [],
+    "score": 42
+  },
+  {
+    "title": "Study on flame retardancy and smoke suppression of silicone rubber foam containing aluminum hydroxide and carbon molecular sieve",
+    "url": "https://doi.org/10.1007/s10973-026-16592-z",
+    "date": "2026-11-19",
+    "summary": "To enhance the flame retardancy and smoke suppression performance of silicone rubber foam (SRF), an efficient and environmentally friendly flame-retardant and smoke-suppression system was developed by incorporating aluminum hydroxide (Al(OH) 3 ) and carbon molecular sieve (CMS). Al(OH) 3 /CMS/SRF composites were fabricated via physical blending, and their flame retardancy, smoke suppression performance, and associated mechanisms were systematically investigated. Results indicate that at mass fractions of 5 wt% and 2 wt% for Al(OH) 3 and CMS, respectively, the composite achieves a limiting oxygen index of 30.8% and attains a UL-94 V-0 rating. Compared with pure SRF, the composite exhibits reductions by 21.41%, 51.8%, 70.3%, and 93.9% in peak heat release rate, total heat release, smoke production rate, and total smoke production, respectively, demonstrating excellent flame retardancy and smoke suppression performance at this optimal loading. Mechanistic analysis reveals that CMS provides a physical supporting skeleton and synergistically forms a dense SiO 2 /char barrier layer with Al 2 O 3 , which effectively prolongs the ignition time and impedes heat and oxygen transfer. This design offers a green, highly efficient synergistic flame-retardant and smoke-suppression strategy, showing great potential for application in silicone rubber foams.",
+    "source": "Journal of Thermal Analysis and Calorimetry",
+    "source_score": 10,
+    "doi": "10.1007/s10973-026-16592-z",
+    "topics": [
+      "General Silicone"
+    ],
+    "matched": [],
+    "score": 42
+  },
+  {
+    "title": "High-Resolution Mesh Refinement, Radial Domain Asymptotics, and Dielectric Interface Diagnostics of a Ten-Shed Polymer Suspension Insulator",
+    "url": "https://doi.org/10.5281/zenodo.24332057",
+    "date": "2026-11-18",
+    "summary": "Building upon the baseline radial domain benchmarks established in Paper No. 01 (Khanh Model v1.1), this second study advances the axisymmetric finite-difference (FD) investigation of a 10-shed polymer suspension insulator energized at 19.052559 kV RMS (33 kV three-phase nominal system) to a high- density computational regime (Model v1.5 series). The physical geometry comprises a fibre-reinforced plastic (FRP) core (εr = 7.2), silicone rubber housing and ten sheds (εr = 4.3), metallic end fittings, and surrounding air (εr = 1.0) over a 405 mm insulator length. Using harmonic permittivity averaging at cell faces, the computational grid is refined from h = 2.0 mm down to h = 0.5 mm while expanding the outer radial domain up to Rmax = 400.0 mm, yielding an 801 × 1,291 structured mesh with 1,034,091 total nodes and 5,126,648 nonzero matrix entries. The sparse linear solver achieves a relative algebraic residual of 1.40 × 10−14 with zero boundary voltage error. Extending Rmax from 360.0 mm to 400.0 mm dampens relative variations in peak air, silicone, and FRP electric fields to 0.154%, 0.254%, and 0.257%, respectively. At h = 0.5 mm, peak stresses reach 1.4599 kV/mm in air (r = 20.5 mm, z = 0.0 mm), 0.4975 kV/mm in silicone (r = 18.5 mm, z = 30.5 mm), and 0.3701 kV/mm in FRP (r = 15.0 mm, z = 31.5 mm), reflecting sharp-corner field concentration. Finally, an orientation-aware dielectric interface diagnostic workflow across 2,738 boundary samples demonstrates that excluding points within 3.0 mm of geometric junctions reduces 95th-percentile mismatches along the Silicone–Air boundary from 0.040764 to 0.001290 μC/m2 in normal electric displacement and from 0.004495 to 0.001767 kV/mm in tangential electric field. Keywords: Polymer suspension insulator; mesh refinement; dielectric interface continuity; normal electric displacement; finite-difference method; corner singularity; silicone rubber; FRP.",
+    "source": "Zenodo (CERN European Organization for Nuclear Research)",
+    "source_score": 10,
+    "doi": "10.5281/zenodo.24332057",
+    "topics": [
+      "General Silicone"
+    ],
+    "matched": [],
+    "score": 42
+  },
+  {
+    "title": "Radial Domain Sensitivity Analysis of Electrostatic Field Distribution in a 10-Shed Polymeric Insulator Using Axisymmetric Finite-Difference Modeling (Khanh Model v1.1)",
+    "url": "https://doi.org/10.5281/zenodo.24331843",
+    "date": "2026-11-18",
+    "summary": "Accurate electrostatic field computation around high-voltage composite polymeric insulators is essential for preventing corona discharge, dry-band arcing, and dielectric degradation, as well as for establishing electromagnetic boundary benchmarks in high-frequency power systems. In open-boundary axisymmetric numerical simulations, artificial truncation of the surrounding air domain introduces boundary-induced field distortion if the radial extent is insufficient. This paper presents an extended radial domain sensitivity investigation using the Khanh Polymer Insulator Model v1.1 on a 10-shed fiberglass-reinforced plastic (FRP) and silicone rubber insulator energized at 19.052559 kV RMS with a uniform 1.00 mm grid resolution. Three radial boundary extents (Rmax = 200.0 mm, 240.0 mm, and 280.0 mm) were evaluated while holding the axial margin constant at 120.0 mm across sparse linear systems up to 181,526 nodes. The solver achieved machine-precision convergence with relative residuals below 4.33 × 10−15 and zero boundary voltage error. Expanding Rmax from 240.0 mm to 280.0 mm reduced successive relative variations in peak air, silicone, and FRP electric fields to 0.657%, 0.965%, and 0.972%, respectively, while preserving invariant hotspot coordinates and a 1025.000 mm creepage profile. Keywords: Polymeric insulator; electrostatic field simulation; radial domain truncation; finite-difference method; creepage tangential field; sensitivity analysis.",
+    "source": "Zenodo (CERN European Organization for Nuclear Research)",
+    "source_score": 10,
+    "doi": "10.5281/zenodo.24331843",
+    "topics": [
+      "General Silicone"
+    ],
+    "matched": [],
+    "score": 42
+  },
+  {
+    "title": "Bias-Type Multilayer Dielectric Elastomer Actuators for Low-Frequency Active Vibration Control",
+    "url": "https://doi.org/10.4271/2026-99-2540",
+    "date": "2026-11-20",
+    "summary": "Dielectric elastomers (DEs) have attracted extensive attention in vibration control because of their large strain, fast response, light weight, and low power consumption. Particularly in highly sensitive engineering fields such as aerospace payload stabilization, semiconductor lithography, and ultra-precision optical instruments, there is an urgent demand for lightweight and efficient active vibration isolation systems. However, the strong nonlinear electromechanical coupling, viscoelasticity, and limited output capability of conventional single-layer structures still restrict their application in low-frequency active vibration isolation. In this paper, a bias-type multilayer silicone dielectric elastomer actuator (DEA) is proposed to improve displacement output and reduce driving voltage through the combination of structural biasing and multilayer stacking. A nonlinear electromechanical model based on the Gent hyperelastic law is established to characterize the coupled effects of voltage, pre-stretch, damping, stiffness, and payload mass. A three-layer DEA is fabricated using Ecoflex 0030, Sylgard 184, and carbon nanotube (CNT) compliant electrodes through a wet-stacking and spin-coating process. Experimental results show that the multilayer structure enhances actuation performance and provides stable static and dynamic response characteristics. An active vibration isolation system is further implemented using adaptive feedforward control with the Fx-LMS algorithm. The proposed system achieves vibration attenuation of 24.53 dB at 8 Hz, 18.22 dB at 16 Hz single-frequency disturbance. The results demonstrate that the proposed DEA is a feasible and effective solution for low-frequency active vibration control, holding significant promise for enhancing the operational stability and precision of high-end manufacturing equipment and next-generation space exploration systems.",
+    "source": "SAE technical papers on CD-ROM/SAE technical paper series",
+    "source_score": 10,
+    "doi": "10.4271/2026-99-2540",
+    "topics": [
+      "General Silicone"
+    ],
+    "matched": [],
+    "score": 41
   },
   {
     "title": "Room Temperature Self‐Healable Thermoplastic‐Elastomeric Blend Materials Based on Reversible Imine Bonded Cross‐Linked Polydimethylsiloxane Elastomer and Thermoplastic Polyurethane in Association With H‐Bonding and Their Characterization",
@@ -130,6 +276,20 @@
     "application_score": 0,
     "recency_score": 5,
     "novelty_score": 4,
+    "score": 37
+  },
+  {
+    "title": "Hierarchical Interfaces in Epoxy Composites for Superhydrophobicity and Anti‐Icing",
+    "url": "https://doi.org/10.1002/pen.70982",
+    "date": "2026-10-22",
+    "summary": "ABSTRACT \n                   Epoxy‐based materials are widely used in protective coatings and structural composites. However, the water absorption and interface performance degradation caused by long‐term exposure to humid environments still limit the stability of their service life. This paper proposes a dual‐scale interface control strategy for silicone rubber‐derived powder (SR‐Powder) and constructs an E‐44 epoxy composite surface with superhydrophobic and freezing‐delay properties. The incorporation of SR‐Powder enhanced the tensile strength of the representative epoxy composite formulation. A hierarchical surface structure was further constructed by imprint‐assisted deposition using a 200‐mesh sieve. The water contact angle of the obtained epoxy composites reached 159.9°, and the sliding angle and contact angle hysteresis decreased to 3.9° and 3.8°, respectively. At −15°C, the freezing delay time of this surface reached 359.0 s, which was 372.4% higher than that of pure epoxy. Molecular dynamics simulations indicate that SR‐Powder weakens the interaction between water molecules and the epoxy interface, reduces the diffusion ability of interface water molecules, and provides a molecular‐scale basis for the low adhesion and water‐repellent mechanism of the composite surface. This study provides a pathway for the functional utilization of silicone rubber‐derived powder and the design of high‐performance water‐repellent epoxy materials.",
+    "source": "Wiley - Polymer Engineering and Science",
+    "source_score": 13,
+    "doi": "10.1002/pen.70982",
+    "topics": [
+      "General Silicone"
+    ],
+    "matched": [],
     "score": 37
   }
 ]
