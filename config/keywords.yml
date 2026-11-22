@@ -1,11 +1,39 @@
 material_gate:
-  liquid silicone rubber: 18
-  high consistency silicone rubber: 18
-  silicone rubber: 15
-  silicone elastomer: 15
-  polysiloxane elastomer: 14
-  pdms elastomer: 10
-  fluorosilicone rubber: 12
+  liquid silicone rubber: 20
+  liquid silicon rubber: 16
+  high consistency silicone rubber: 20
+  high consistency rubber: 16
+  high temperature vulcanized silicone rubber: 18
+  high temperature vulcanizing silicone rubber: 18
+  heat cured silicone rubber: 17
+  heat curable silicone rubber: 17
+  room temperature vulcanized silicone rubber: 15
+  room temperature vulcanizing silicone rubber: 15
+  silicone rubber: 18
+  silicone elastomer: 18
+  silicone elastomer composite: 16
+  silicone rubber composite: 16
+  polysiloxane elastomer: 16
+  polysiloxane network: 14
+  crosslinked polysiloxane: 15
+  cross-linked polysiloxane: 15
+  siloxane elastomer: 15
+  pdms elastomer: 14
+  crosslinked pdms: 14
+  cross-linked pdms: 14
+  polydimethylsiloxane elastomer: 16
+  methyl vinyl silicone rubber: 18
+  methylvinyl silicone rubber: 18
+  phenyl silicone rubber: 16
+  fluorosilicone rubber: 18
+  fluorosilicone elastomer: 17
+  conductive silicone rubber: 18
+  thermally conductive silicone rubber: 20
+  dielectric silicone elastomer: 17
+  silicone dielectric elastomer: 17
+  silicone sponge rubber: 14
+  silicone foam: 12
+  silicone gel: 10
 topics:
   Aging and Compression:
     weight: 10
@@ -42,4 +70,27 @@ applications:
   electric vehicle: 9
   high voltage: 8
   thermal management: 8
-exclusions: [silicon wafer, silicon carbide, silicon nitride, transistor, solar cell, microfluidic chip, pdms microfluidic]
+exclusions:
+  - silicon wafer
+  - silicon carbide
+  - silicon nitride
+  - silicon anode
+  - silicon nanowire
+  - silicon solar cell
+  - semiconductor silicon
+  - transistor
+  - photovoltaic
+  - solar cell
+  - silica aerogel
+  - silicate glass
+  - microfluidic chip
+  - microfluidic device
+  - pdms microfluidic
+  - lab-on-a-chip
+  - organ-on-a-chip
+  - soft lithography
+  - cell culture chip
+  - drug delivery device
+  - silicone breast implant
+  - silicone implant
+  - silicone oil tamponade
