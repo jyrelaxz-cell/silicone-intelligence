@@ -300,9 +300,9 @@ archive_weeks = {
     for archive_file in archive_files
 }
 
-archive_weeks.add(week))
+archive_weeks.add(week)
 
-    *rchive_links = []
+archive_links = []
 
     for archive*week in sorted(
         archive_we*ks,
