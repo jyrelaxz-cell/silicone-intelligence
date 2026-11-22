@@ -22,7 +22,7 @@ def collect_rss(source):
     return result
 
 def collect_crossref(source):
-    start=(dt.date.today()-dt.timedelta(days=30)).isoformat()
+    start=(dt.date.today()-dt.timedelta(days=90)).isoformat()
     url='https://api.crossref.org/journals/'+quote(str(source['issn']))+'/works'
     params={'filter':'from-pub-date:'+start,'sort':'published','order':'desc','rows':100}
     response=requests.get(url,params=params,timeout=45,headers={'User-Agent':'SiliconeIntelligence/2.0'}); response.raise_for_status()
