@@ -56,6 +56,10 @@ def unique(items):
     return list(output.values())
 
 def build(items, settings):
+    (ROOT / 'weekly').mkdir(parents=True, exist_ok=True)
+    (ROOT / 'data').mkdir(parents=True, exist_ok=True)
+    (ROOT / 'docs').mkdir(parents=True, exist_ok=True
+                        
     top=sorted([a for a in items if a['score']>=settings['minimum_score']],key=lambda x:(x['score'],x['date']),reverse=True)[:settings['weekly_top_n']]
     cards=[]
     for a in top:
