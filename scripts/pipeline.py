@@ -34,9 +34,45 @@ def collect_crossref(source):
     return result
 
 def score(article, keywords):
-    text=(article['title']+' '+article['summary']).lower()
-    gates=[weight for term,weight in keywords['material_gate'].items() if term in text]
-    if not gates: return None
+def score(article, keywords):
+    text = (article['title'] + ' ' + article['summary']).lower()
+
+    gates = [
+        weight
+        for term, weight in keywords['material_gate'].items()
+        if term in text
+    ]
+
+    abbreviation_rules = {
+        ' lsr ': 16,
+        ' hcr ': 16,
+        ' htv ': 14,
+        ' rtv ': 12,
+        ' vmq ': 16,
+        ' pvmq ': 16,
+        ' fvmq ': 18,
+    }
+
+    padded_text = ' ' + re.sub(r'[^a-z0-9]+', ' ', text) + ' '
+
+    silicone_context = any(term in text for term in [
+        'silicone',
+        'siloxane',
+        'polysiloxane',
+        'elastomer',
+        'rubber',
+        'crosslink',
+        'cross-link',
+        'vulcaniz',
+    ])
+
+    if silicone_context:
+        for abbreviation, weight in abbreviation_rules.items():
+            if abbreviation in padded_text:
+                gates.append(weight)
+
+    if not gates:
+        return None
     if any(x in text for x in keywords['exclusions']) and 'silicone rubber' not in text and 'silicone elastomer' not in text: return None
     topics=[]; topic_score=0
     for name,group in keywords['topics'].items():
