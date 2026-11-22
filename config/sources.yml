@@ -1,0 +1,35 @@
+sources:
+  - name: MDPI - Polymers
+    type: rss
+    enabled: true
+    url: https://www.mdpi.com/rss/journal/polymers
+    source_score: 12
+  - name: ScienceDirect - Polymer
+    type: crossref
+    enabled: true
+    issn: 0032-3861
+    source_score: 13
+  - name: Rubber Chemistry and Technology
+    type: crossref
+    enabled: true
+    issn: 1943-4804
+    source_score: 14
+  - name: Wiley - Journal of Applied Polymer Science
+    type: crossref
+    enabled: true
+    issn: 1097-4628
+    source_score: 13
+  - name: RSC - Polymer Chemistry
+    type: crossref
+    enabled: true
+    issn: 1759-9962
+    source_score: 14
+  - name: Springer Nature - Silicon
+    type: crossref
+    enabled: true
+    issn: 1876-9918
+    source_score: 12
+  - {name: Google Scholar, type: manual, enabled: false}
+  - {name: Dow - Elastomers and Plastomers, type: manual, enabled: false}
+  - {name: Espacenet, type: manual, enabled: false}
+  - {name: Google Patents, type: manual, enabled: false}

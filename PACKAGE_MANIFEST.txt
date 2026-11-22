@@ -1,0 +1,17 @@
+.github/workflows/weekly-update.yml
+README.md
+START_HERE.md
+config/keywords.yml
+config/settings.yml
+config/sources.yml
+data/articles.json
+data/latest.json
+docs/assets/style.css
+docs/index.html
+requirements.txt
+scripts/__pycache__/pipeline.cpython-312.pyc
+scripts/pipeline.py
+scripts/template.html
+weekly/.gitkeep
+workflow-backup/weekly-update.yml
+PACKAGE_MANIFEST.txt
