@@ -290,16 +290,17 @@ def build(items, settings):
             '</article>'
         )
 
-    archive_files = sorted(
-        html_archive_folder.glob('*.html'),
-        reverse=Tr*e
-    )
+archive_files = sorted(
+    html_archive_folder.glob('*.html'),
+    reverse=True
+)
 
-    archive_weeks = {
+archive_weeks = {
     archive_file.stem
-    for *rchive_file in archive_files
-    }*
-    archive_weeks.add(week)
+    for archive_file in archive_files
+}
+
+archive_weeks.add(week))
 
     *rchive_links = []
 
