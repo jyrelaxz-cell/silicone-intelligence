@@ -34,54 +34,145 @@ def collect_crossref(source):
     return result
 
 def score(article, keywords):
-def score(article, keywords):
-    text = (article['title'] + ' ' + article['summary']).lower()
+    text = (
+        article.get('title', '') + ' ' +
+        article.get('summary', '')
+    ).lower()
 
     gates = [
         weight
         for term, weight in keywords['material_gate'].items()
-        if term in text
+        if term.lower() in text
     ]
 
     abbreviation_rules = {
-        ' lsr ': 16,
-        ' hcr ': 16,
-        ' htv ': 14,
-        ' rtv ': 12,
-        ' vmq ': 16,
-        ' pvmq ': 16,
-        ' fvmq ': 18,
+        'lsr': 16,
+        'hcr': 16,
+        'htv': 14,
+        'rtv': 12,
+        'vmq': 16,
+        'pvmq': 16,
+        'fvmq': 18,
     }
 
-    padded_text = ' ' + re.sub(r'[^a-z0-9]+', ' ', text) + ' '
+    padded_text = (
+        ' ' +
+        re.sub(r'[^a-z0-9]+', ' ', text) +
+        ' '
+    )
 
-    silicone_context = any(term in text for term in [
-        'silicone',
-        'siloxane',
-        'polysiloxane',
-        'elastomer',
-        'rubber',
-        'crosslink',
-        'cross-link',
-        'vulcaniz',
-    ])
+    silicone_context = any(
+        term in text
+        for term in [
+            'silicone',
+            'siloxane',
+            'polysiloxane',
+            'elastomer',
+            'rubber',
+            'crosslink',
+            'cross-link',
+            'vulcaniz',
+        ]
+    )
 
     if silicone_context:
         for abbreviation, weight in abbreviation_rules.items():
-            if abbreviation in padded_text:
+            if f' {abbreviation} ' in padded_text:
                 gates.append(weight)
 
     if not gates:
         return None
-    if any(x in text for x in keywords['exclusions']) and 'silicone rubber' not in text and 'silicone elastomer' not in text: return None
-    topics=[]; topic_score=0
-    for name,group in keywords['topics'].items():
-        if any(term in text for term in group['terms']): topics.append(name); topic_score=min(20,topic_score+group['weight'])
-    app_score=min(20,sum(weight for term,weight in keywords['applications'].items() if term in text))
-    age=(dt.date.today()-dt.date.fromisoformat(article['date'])).days
-    recency=10 if age<=7 else 8 if age<=14 else 5
-    article['topics']=topics or ['General Silicone']
-    article['score']=min(100,max(gates)+topic_score+app_score+article['source_score']+recency+5)
+
+    exclusions = keywords.get('exclusions', [])
+
+    explicit_silicone_elastomer = any(
+        term in text
+        for term in [
+            'silicone rubber',
+            'silicone elastomer',
+            'polysiloxane elastomer',
+            'fluorosilicone rubber',
+            'liquid silicone rubber',
+        ]
+    )
+
+    if (
+        any(term.lower() in text for term in exclusions)
+        and not explicit_silicone_elastomer
+    ):
+        return None
+
+    topics = []
+    topic_score = 0
+    matched_terms = []
+
+    for topic_name, topic_group in keywords['topics'].items():
+        hits = [
+            term
+            for term in topic_group['terms']
+            if term.lower() in text
+        ]
+
+        if hits:
+            topics.append(topic_name)
+            matched_terms.extend(hits)
+            topic_score = min(
+                20,
+                topic_score + int(topic_group['weight'])
+            )
+
+    application_score = min(
+        20,
+        sum(
+            int(weight)
+            for term, weight in keywords['applications'].items()
+            if term.lower() in text
+        )
+    )
+
+    try:
+        publish_date = dt.date.fromisoformat(article['date'])
+        age_days = (dt.date.today() - publish_date).days
+    except (ValueError, TypeError, KeyError):
+        age_days = 30
+
+    if age_days <= 7:
+        recency_score = 10
+    elif age_days <= 14:
+        recency_score = 8
+    elif age_days <= 30:
+        recency_score = 5
+    elif age_days <= 90:
+        recency_score = 2
+    else:
+        recency_score = 0
+
+    novelty_score = min(
+        15,
+        4 + len(set(matched_terms))
+    )
+
+    final_score = min(
+        100,
+        max(gates)
+        + topic_score
+        + application_score
+        + int(article.get('source_score', 0))
+        + recency_score
+        + novelty_score
+    )
+
+    article.update(
+        topics=topics or ['General Silicone'],
+        matched=sorted(set(matched_terms)),
+        material_score=max(gates),
+        keyword_score=topic_score,
+        application_score=application_score,
+        recency_score=recency_score,
+        novelty_score=novelty_score,
+        score=final_score,
+    )
+
     return article
 
 def unique(items):
