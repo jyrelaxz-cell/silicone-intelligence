@@ -1,0 +1,11 @@
+sources:
+- {id: mdpi, name: "MDPI - Polymers", type: rss, enabled: true, url: "https://www.mdpi.com/rss/journal/polymers", source_score: 12, lookback_days: 10}
+- {id: polymer, name: "ScienceDirect - Polymer", type: crossref, enabled: true, issn: "0032-3861", source_score: 13, lookback_days: 14}
+- {id: rct, name: "Rubber Chemistry and Technology", type: crossref, enabled: true, issn: "1943-4804", source_score: 14, lookback_days: 14}
+- {id: japs, name: "Wiley - Journal of Applied Polymer Science", type: crossref, enabled: true, issn: "1097-4628", source_score: 13, lookback_days: 14}
+- {id: rsc, name: "RSC - Polymer Chemistry", type: crossref, enabled: true, issn: "1759-9962", source_score: 14, lookback_days: 14}
+- {id: silicon, name: "Springer Nature - Silicon", type: crossref, enabled: true, issn: "1876-9918", source_score: 12, lookback_days: 14}
+- {id: dow, name: "Dow - Elastomers and Plastomers", type: manual, enabled: false, url: "https://www.dow.com/en-us/product-technology/pt-elastomers-rubber.html", source_score: 9}
+- {id: scholar, name: "Google Scholar", type: manual, enabled: false, url: "https://scholar.google.com/", source_score: 0}
+- {id: espacenet, name: "Espacenet", type: manual, enabled: false, url: "https://worldwide.espacenet.com/", source_score: 12}
+- {id: patents, name: "Google Patents", type: manual, enabled: false, url: "https://patents.google.com/", source_score: 12}
