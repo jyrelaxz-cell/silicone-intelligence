@@ -296,8 +296,8 @@ def build(items, settings):
     )
 
     archive_weeks = {
-   *    archive_file.stem
-        for *rchive_file in archive_files
+    archive_file.stem
+    for *rchive_file in archive_files
     }*
     archive_weeks.add(week)
 
