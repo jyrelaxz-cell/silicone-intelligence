@@ -1,68 +1,103 @@
-<!doctype html>
+<!doctype h*ml>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <*eta charset="utf-8">
+
   <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
+    *ame="viewport"
+    content="width=*evice-width, initial-scale=1"
   >
-  <title>{{TITLE}}</title>
-  <link
+*  <title>{{TITLE}}</title>
+
+  <lin*
     rel="stylesheet"
-    href="assets/style.css"
+    href="as*ets/style.css"
   >
 </head>
 
-<body>
-  <header>
+<body>*  <header>
     <div class="wrap">
-      <small>SILICONE INTELLIGENCE</small>
+*     <small>SILICONE INTELLIGENCE<*small>
 
       <h1>{{TITLE}}</h1>
 
-      <p>
-        Weekly intelligence for silicone elastomer innovation
+*     <p>
+        Weekly intelligen*e for silicone elastomer innovatio*
       </p>
+
+      <nav class="sit*-nav">
+        <a href="index.html*>Latest</a>
+
+        <a href="#wee*ly-summary">
+          Weekly Summ*ry
+        </a>
+
+        <a href="*rchive.html">Archive</a>
+      </n*v>
     </div>
   </header>
 
-  <main class="wrap">
-    <div class="summary-bar">
-      <strong>{{WEEK}}</strong>
-      <strong>{{COUNT}} articles selected</strong>
+  <main*class="wrap">
+    <div class="summ*ry-bar">
+      <strong>{{WEEK}}</s*rong>
+
+      <strong>
+        {{CO*NT}} articles selected
+      </str*ng>
     </div>
 
-    <section class="weekly-summary">
-      <div class="section-heading">
-        <small>WEEKLY DIGEST</small>
-        <h2>Weekly Article Summary</h2>
+    <section
+     *class="weekly-summary"
+      id="w*ekly-summary"
+    >
+      <div cla*s="section-heading">
+        <smal*>WEEKLY DIGEST</small>
 
-        <p>
-          A concise overview of this week's selected articles,
-          ranked by technical relevance.
+        <h*>Weekly Article Summary</h2>
+
+    *   <p>
+          A concise overvie* of this week's selected articles,*          ranked by technical rele*ance.
         </p>
       </div>
 
-      <ol class="summary-list">
-        {{SUMMARY_LIST}}
+ *    <ol class="summary-list">
+    *   {{SUMMARY_LIST}}
       </ol>
-    </section>
+  * </section>
 
-    <section class="selected-articles">
-      <div class="section-heading">
-        <small>SELECTED ARTICLES</small>
-        <h2>Article Details</h2>
+    <section class="s*lected-articles">
+      <div class*"section-heading">
+        <small>*ELECTED ARTICLES</small>
+        <*2>Article Details</h2>
       </div>
 
       <div class="article-grid">
         {{CARDS}}
       </div>
     </section>
+
+    <section class="archive-preview">
+      <div class="section-heading">
+        <small>ARCHIVE</small>
+        <h2>Previous Weekly Summaries</h2>
+      </div>
+
+      <ol class="archive-list">
+        {{ARCHIVE_LINKS}}
+      </ol>
+
+      <a
+        class="archive-button"
+        href="archive.html"
+      >
+        View full archive
+      </a>
+    </section>
   </main>
 
   <footer class="wrap">
     Public-source technical intelligence for R&amp;D reference.
-    Verify technical decisions against the original publications,
+    Verify technical decisions against original publications,
     patents, and supplier documents.
   </footer>
 </body>
