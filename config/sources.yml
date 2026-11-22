@@ -1,35 +1,49 @@
 sources:
-  - name: MDPI - Polymers
-    type: rss
+  # Existing academic sources
+  - {name: "MDPI - Polymers", type: rss, enabled: true, url: "https://www.mdpi.com/rss/journal/polymers", source_score: 12}
+  - {name: "ScienceDirect - Polymer", type: crossref, enabled: true, issn: "0032-3861", source_score: 13, homepage: "https://www.sciencedirect.com/journal/polymer"}
+  - {name: "Rubber Chemistry and Technology", type: crossref, enabled: true, issn: "1943-4804", source_score: 14, homepage: "https://rct.kglmeridian.com/"}
+  - {name: "Wiley - Journal of Applied Polymer Science", type: crossref, enabled: true, issn: "1097-4628", source_score: 13, homepage: "https://onlinelibrary.wiley.com/journal/10974628"}
+  - {name: "RSC - Polymer Chemistry", type: crossref, enabled: true, issn: "1759-9962", source_score: 14}
+  - {name: "Springer Nature - Silicon", type: crossref, enabled: true, issn: "1876-9918", source_score: 12}
+
+  # User-added journals, deduplicated
+  - {name: "ScienceDirect - Polymer Testing", type: crossref, enabled: true, issn: "0142-9418", source_score: 14, homepage: "https://www.sciencedirect.com/journal/polymer-testing"}
+  - {name: "ScienceDirect - Polymer Degradation and Stability", type: crossref, enabled: true, issn: "1873-2321", source_score: 15, homepage: "https://www.sciencedirect.com/journal/polymer-degradation-and-stability"}
+  - {name: "SAGE - Journal of Elastomers and Plastics", type: crossref, enabled: true, issn: "1530-8006", source_score: 13, homepage: "https://journals.sagepub.com/home/jep"}
+  - {name: "ScienceDirect - Composites Science and Technology", type: crossref, enabled: true, issn: "0266-3538", source_score: 14, homepage: "https://www.sciencedirect.com/journal/composites-science-and-technology"}
+  - {name: "ScienceDirect - Composites Part A", type: crossref, enabled: true, issn: "1878-5840", source_score: 14, homepage: "https://www.sciencedirect.com/journal/composites-part-a-applied-science-and-manufacturing"}
+  - {name: "Wiley - Advanced Functional Materials", type: crossref, enabled: true, issn: "1616-3028", source_score: 15, homepage: "https://advanced.onlinelibrary.wiley.com/journal/16163028"}
+  - {name: "International Polymer Processing", type: crossref, enabled: true, issn: "2195-8602", source_score: 12, homepage: "https://www.degruyterbrill.com/journal/key/ipp/html"}
+  - {name: "ACS - Macromolecules", type: crossref, enabled: true, issn: "1520-5835", source_score: 15, homepage: "https://pubs.acs.org/mamobx"}
+  - {name: "ScienceDirect - Chemical Engineering Journal", type: crossref, enabled: true, issn: "1385-8947", source_score: 14, homepage: "https://www.sciencedirect.com/journal/chemical-engineering-journal"}
+  - {name: "ACS Applied Materials and Interfaces", type: crossref, enabled: true, issn: "1944-8252", source_score: 15, homepage: "https://pubs.acs.org/aamick"}
+  - {name: "Wiley - Polymer Engineering and Science", type: crossref, enabled: true, issn: "1548-2634", source_score: 13, homepage: "https://4spepublications.onlinelibrary.wiley.com/journal/15482634"}
+  - {name: "ScienceDirect - Journal of Organometallic Chemistry", type: crossref, enabled: true, issn: "1872-8561", source_score: 12, homepage: "https://www.sciencedirect.com/journal/journal-of-organometallic-chemistry"}
+
+  # Industry / organization sources
+  - {name: "Rubber World", type: rss, enabled: true, url: "https://rubberworld.com/category/rss6/feed/", source_score: 8, homepage: "https://rubberworld.com/"}
+  - {name: "Rubber News", type: manual, enabled: false, source_score: 7, homepage: "https://www.rubbernews.com/", notes: "No verified stable public RSS/API configured."}
+  - {name: "Rubber Division ACS", type: manual, enabled: false, source_score: 8, homepage: "https://www.rubber.org/", notes: "News page retained for later RSS/API integration."}
+
+  # Broad discovery sources
+  - name: "IEEE Xplore via OpenAlex"
+    type: openalex_search
     enabled: true
-    url: https://www.mdpi.com/rss/journal/polymers
-    source_score: 12
-  - name: ScienceDirect - Polymer
-    type: crossref
-    enabled: true
-    issn: 0032-3861
+    search: "silicone rubber OR silicone elastomer"
+    source_name_contains: "IEEE"
     source_score: 13
-  - name: Rubber Chemistry and Technology
-    type: crossref
+    homepage: "https://ieeexplore.ieee.org/Xplore/home.jsp"
+
+  - name: "OpenAlex broad silicone discovery"
+    type: openalex_search
     enabled: true
-    issn: 1943-4804
-    source_score: 14
-  - name: Wiley - Journal of Applied Polymer Science
-    type: crossref
-    enabled: true
-    issn: 1097-4628
-    source_score: 13
-  - name: RSC - Polymer Chemistry
-    type: crossref
-    enabled: true
-    issn: 1759-9962
-    source_score: 14
-  - name: Springer Nature - Silicon
-    type: crossref
-    enabled: true
-    issn: 1876-9918
-    source_score: 12
-  - {name: Google Scholar, type: manual, enabled: false}
-  - {name: Dow - Elastomers and Plastomers, type: manual, enabled: false}
-  - {name: Espacenet, type: manual, enabled: false}
-  - {name: Google Patents, type: manual, enabled: false}
+    search: "silicone rubber OR liquid silicone rubber OR silicone elastomer"
+    source_score: 10
+    homepage: "https://openalex.org/"
+
+  # Existing manual sources retained
+  - {name: "Google Scholar", type: manual, enabled: false, source_score: 0, homepage: "https://scholar.google.com/"}
+  - {name: "Dow - Elastomers and Plastomers", type: manual, enabled: false, source_score: 9, homepage: "https://www.dow.com/en-us/product-technology/pt-elastomers-rubber.html"}
+  - {name: "Espacenet", type: manual, enabled: false, source_score: 12, homepage: "https://worldwide.espacenet.com/"}
+  - {name: "Google Patents", type: manual, enabled: false, source_score: 12, homepage: "https://patents.google.com/"}
