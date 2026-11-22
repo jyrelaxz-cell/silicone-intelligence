@@ -183,9 +183,15 @@ def unique(items):
     return list(output.values())
 
 def build(items, settings):
-    (ROOT / 'weekly').mkdir(parents=True, exist_ok=True)
-    (ROOT / 'data').mkdir(parents=True, exist_ok=True)
-    (ROOT / 'docs').mkdir(parents=True, exist_ok=True)
+    docs_folder = ROOT / 'docs'
+    data_folder = ROOT / 'data'
+    markdown_folder = ROOT / 'weekly'
+    html_archive_folder = docs_folder / 'weekly'
+
+    docs_folder.mkdir(parents=True, exist_ok=True)
+    data_folder.mkdir(parents=True, exist_ok=True)
+    markdown_folder.mkdir(parents=True, exist_ok=True)
+    html_archive_folder.mkdir(parents=True, exist_ok=True)
 
     selected_articles = [
         article
@@ -202,10 +208,19 @@ def build(items, settings):
         reverse=True
     )[:settings['weekly_top_n']]
 
+    current_date = dt.date.today()
+    iso_calendar = current_date.isocalendar()
+
+    week = (
+        str(iso_calendar.year)
+        + '-W'
+        + str(iso_calendar.week).zfill(2)
+    )
+
     summary_items = []
     article_cards = []
 
-    for index, article in enumerate(top, start=1):
+    for article in top:
         original_summary = article.get('summary', '').strip()
 
         if original_summary:
@@ -215,8 +230,9 @@ def build(items, settings):
                 short_summary += '...'
         else:
             short_summary = (
-                'No abstract is available from the current data source. '
-                'Open the original article for more information.'
+                'No abstract is available from the current '
+                'data source. Open the original article '
+                'for more information.'
             )
 
         summary_items.append(
@@ -229,9 +245,12 @@ def build(items, settings):
             '</h3>'
             '<p>' + html.escape(short_summary) + '</p>'
             '<div class="summary-meta">'
-            + html.escape(article['source']) +
-            ' | ' + html.escape(article['date']) +
-            ' | Score: ' + str(article['score']) + '/100'
+            + html.escape(article['source'])
+            + ' | '
+            + html.escape(article['date'])
+            + ' | Score: '
+            + str(article['score'])
+            + '/100'
             '</div>'
             '</li>'
         )
@@ -247,87 +266,212 @@ def build(items, settings):
         article_cards.append(
             '<article class="article-card">'
             '<div class="meta">'
-            + html.escape(article['source']) +
-            ' | ' + html.escape(article['date']) +
-            ' | <b>' + str(article['score']) + '/100</b>'
+            + html.escape(article['source'])
+            + ' | '
+            + html.escape(article['date'])
+            + ' | <b>'
+            + str(article['score'])
+            + '/100</b>'
             '</div>'
-            '<h2>' + html.escape(article['title']) + '</h2>'
-            '<div class="tags">' + topic_tags + '</div>'
-            '<p>' + html.escape(short_summary) + '</p>'
-            '<a href="' + html.escape(article['url']) + '" '
-            'target="_blank" rel="noopener">'
+            '<h2>'
+            + html.escape(article['title'])
+            + '</h2>'
+            '<div class="tags">'
+            + topic_tags
+            + '</div>'
+            '<p>'
+            + html.escape(short_summary)
+            + '</p>'
+            '<a href="'
+            + html.escape(article['url'])
+            + '" target="_blank" rel="noopener">'
             'Read source'
             '</a>'
             '</article>'
         )
 
-    current_date = dt.date.today()
-    iso_calendar = current_date.isocalendar()
-
-    week = (
-        str(iso_calendar.year)
-        + '-W'
-        + str(iso_calendar.week).zfill(2)
+    archive_files = sorted(
+        html_archive_folder.glob('*.html'),
+        reverse=Tr*e
     )
 
-    template = (
-        ROOT / 'scripts' / 'template.html'
+    archive_weeks = {
+   *    archive_file.stem
+        for *rchive_file in archive_files
+    }*
+    archive_weeks.add(week)
+
+    *rchive_links = []
+
+    for archive*week in sorted(
+        archive_we*ks,
+        reverse=True
+    ):
+  *     archive_links.append(
+       *    '<li>'
+            '<a href="w*ekly/'
+            + archive_week
+*           + '.html">'
+           *+ archive_week
+            + ' Wee*ly Summary'
+            '</a>'
+   *        '</li>'
+        )
+
+    tem*late = (
+        ROOT / 'scripts' * 'template.html'
     ).read_text(
-        encoding='utf-8'
+*       encoding='utf-8'
     )
 
-    page = (
+   *page = (
         template
-        .replace(
+        *replace(
             '{{TITLE}}',
-            settings['site_title']
-        )
+*           settings['site_title']
+*       )
         .replace(
-            '{{WEEK}}',
+       *    '{{WEEK}}',
             week
-        )
+ *      )
         .replace(
-            '{{COUNT}}',
-            str(len(top))
+        *   '{{COUNT}}',
+            str(le*(top))
         )
+        .replace(*            '{{SUMMARY_LIST}}',
+  *         ''.join(summary_items)
+  *     )
         .replace(
-            '{{SUMMARY_LIST}}',
-            ''.join(summary_items)
+         *  '{{CARDS}}',
+            ''.join*article_cards)
         )
-        .replace(
-            '{{CARDS}}',
-            ''.join(article_cards)
+        .*eplace(
+            '{{ARCHIVE_LIN*S}}',
+            ''.join(archive_*inks)
         )
     )
 
     (
-        ROOT / 'docs' / 'index.html'
-    ).write_text(
+     *  docs_folder / 'index.html'
+    )*write_text(
         page,
-        encoding='utf-8'
+        *ncoding='utf-8'
+    )
+
+    archive*page = (
+        page
+        .rep*ace(
+            'href="weekly/',
+*           'href="'
+        )
+    *   .replace(
+            'href="as*ets/style.css"',
+            'href*"../assets/style.css"'
+        )
+ *      .replace(
+            'href=*index.html"',
+            'href=".*/index.html"'
+        )
+        .r*place(
+            'href="archive.*tml"',
+            'href="../archi*e.html"'
+        )
     )
 
     (
-        ROOT / 'data' / 'articles.json'
+  *     html_archive_folder / (week +*'.html')
     ).write_text(
-        json.dumps(
-            items,
-            ensure_ascii=False,
-            indent=2
+       *archive_page,
+        encoding='ut*-8'
+    )
+
+    archive_template = *""<!doctype html>
+<html lang="zh-C*">
+<head>
+  <meta charset="utf-8">*  <meta
+    name="viewport"
+    co*tent="width=device-width, initial-*cale=1"
+  >
+  <title>Weekly Archiv*</title>
+  <link
+    rel="styleshe*t"
+    href="assets/style.css"
+  >*</head>
+
+<body>
+  <header>
+    <di* class="wrap">
+      <small>SILICO*E INTELLIGENCE</small>
+      <h1>W*ekly Archive</h1>
+      <p>Previou* silicone materials intelligence s*mmaries</p>
+
+      <nav class="sit*-nav">
+        <a href="index.html*>Latest</a>
+        <a href="index*html#weekly-summary">
+          We*kly Summary
+        </a>
+        <* href="archive.html">Archive</a>
+ *    </nav>
+    </div>
+  </header>
+*  <main class="wrap">
+    <section*class="archive-section">
+      <di* class="section-heading">
+        *small>HISTORY</small>
+        <h2>*ll Weekly Summaries</h2>
+      </d*v>
+
+      <ol class="archive-list"*
+        """ + ''.join(archive_lin*s) + """
+      </ol>
+    </section*
+  </main>
+
+  <footer class="wrap"*
+    Public-source technical intel*igence for R&amp;D reference.
+  </*ooter>
+</body>
+</html>
+"""
+
+    (
+*       docs_folder / 'archive.html*
+    ).write_text(
+        archive*template,
+        encoding='utf-8'*    )
+
+    (
+        data_folder /*'articles.json'
+    ).write_text(
+*       json.dumps(
+            ite*s,
+            ensure_ascii=False,*            indent=2
         ),
-        encoding='utf-8'
+  *     encoding='utf-8'
     )
 
-    (
-        ROOT / 'data' / 'latest.json'
+    (*        data_folder / 'latest.json*
     ).write_text(
-        json.dumps(
+        json.du*ps(
             top,
-            ensure_ascii=False,
-            indent=2
+            e*sure_ascii=False,
+            inde*t=2
         ),
-        encoding='utf-8'
+        encoding='u*f-8'
     )
+
+    weekly_data_file =*(
+        data_folder / (week + '.*son')
+    )
+
+    weekly_data_file.*rite_text(
+        json.dumps(
+   *        top,
+            ensure_as*ii=False,
+            indent=2
+   *    ),
+        encoding='utf-8'
+  * )
 
     markdown_lines = [
         '# ' + settings['site_title'] + ' ' + week,
@@ -336,37 +480,46 @@ def build(items, settings):
         ''
     ]
 
-    for index, article in enumerate(top, start=1):
-        original_summary = article.get('summary', '').strip()
+    for index, article in en*merate(top, start=1):
+        orig*nal_summary = article.get(
+       *    'summary',
+            ''
+    *   ).strip()
 
-        if original_summary:
-            markdown_summary = original_summary[:500]
+        if original_*ummary:
+            markdown_summa*y = original_summary[:500]
 
-            if len(original_summary) > 500:
-                markdown_summary += '...'
+      *     if len(original_summary) > 50*:
+                markdown_summary*+= '...'
         else:
-            markdown_summary = (
-                'No abstract is available from the current source.'
+           *markdown_summary = (
+             *  'No abstract is available from '*                'the current sourc*.'
             )
 
-        markdown_lines.extend([
-            str(index) + '. [' + article['title'] + ']('
-            + article['url'] + ')',
+        markdown*lines.extend([
+            str(index)
+            + '. ['
+            + article['title']
+            + ']('
+            + article['url']
+            + ')',
             '',
-            markdown_summary,
-            '',
-            '**Source:** ' + article['source']
-            + ' | **Date:** ' + article['date']
-            + ' | **Score:** ' + str(article['score'])
-            + '/100',
+  *         markdown_summary,
+       *    '',
+            '**Source:** '*            + article['source']
+  *         + ' | **Date:** '
+       *    + article['date']
+            * ' | **Score:** '
+            + st*(article['score'])
+            + '*100',
             ''
         ])
 
-    (
-        ROOT / 'weekly' / (week + '.md')
+ *  (
+        markdown_folder / (wee* + '.md')
     ).write_text(
-        '\n'.join(markdown_lines),
-        encoding='utf-8'
+      * '\n'.join(markdown_lines),
+      * encoding='utf-8'
     )
 def main():
     sources=load_yaml('sources.yml')['sources']; keywords=load_yaml('keywords.yml'); settings=load_yaml('settings.yml')
