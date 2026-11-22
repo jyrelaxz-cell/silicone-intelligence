@@ -186,20 +186,188 @@ def build(items, settings):
     (ROOT / 'weekly').mkdir(parents=True, exist_ok=True)
     (ROOT / 'data').mkdir(parents=True, exist_ok=True)
     (ROOT / 'docs').mkdir(parents=True, exist_ok=True)
-    top=sorted([a for a in items if a['score']>=settings['minimum_score']],key=lambda x:(x['score'],x['date']),reverse=True)[:settings['weekly_top_n']]
-    cards=[]
-    for a in top:
-        tags=''.join('<span>'+html.escape(t)+'</span>' for t in a['topics'])
-        summary=(a['summary'][:360]+'...') if len(a['summary'])>360 else (a['summary'] or 'No abstract available. Open the source for details.')
-        cards.append('<article><div class="meta">'+html.escape(a['source'])+' | '+a['date']+' | <b>'+str(a['score'])+'/100</b></div><h2>'+html.escape(a['title'])+'</h2><div class="tags">'+tags+'</div><p>'+html.escape(summary)+'</p><a href="'+html.escape(a['url'])+'" target="_blank">Read source</a></article>')
-    week=f"{dt.date.today().isocalendar().year}-W{dt.date.today().isocalendar().week:02d}"
-    page=(ROOT/'scripts/template.html').read_text(encoding='utf-8').replace('{{TITLE}}',settings['site_title']).replace('{{WEEK}}',week).replace('{{COUNT}}',str(len(top))).replace('{{CARDS}}',''.join(cards))
-    (ROOT/'docs/index.html').write_text(page,encoding='utf-8')
-    (ROOT/'data/articles.json').write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding='utf-8')
-    (ROOT/'data/latest.json').write_text(json.dumps(top,ensure_ascii=False,indent=2),encoding='utf-8')
-    lines=['# '+settings['site_title']+' '+week,'']+[f"## {i+1}. [{a['title']}]({a['url']})\n\n**{a['source']} | {a['score']}/100**\n\n{a['summary'][:500]}" for i,a in enumerate(top)]
-    (ROOT/'weekly'/(week+'.md')).write_text('\n\n'.join(lines),encoding='utf-8')
 
+    selected_articles = [
+        article
+        for article in items
+        if article['score'] >= settings['minimum_score']
+    ]
+
+    top = sorted(
+        selected_articles,
+        key=lambda article: (
+            article['score'],
+            article['date']
+        ),
+        reverse=True
+    )[:settings['weekly_top_n']]
+
+    summary_items = []
+    article_cards = []
+
+    for index, article in enumerate(top, start=1):
+        original_summary = article.get('summary', '').strip()
+
+        if original_summary:
+            short_summary = original_summary[:500]
+
+            if len(original_summary) > 500:
+                short_summary += '...'
+        else:
+            short_summary = (
+                'No abstract is available from the current data source. '
+                'Open the original article for more information.'
+            )
+
+        summary_items.append(
+            '<li class="summary-item">'
+            '<h3>'
+            '<a href="' + html.escape(article['url']) + '" '
+            'target="_blank" rel="noopener">'
+            + html.escape(article['title']) +
+            '</a>'
+            '</h3>'
+            '<p>' + html.escape(short_summary) + '</p>'
+            '<div class="summary-meta">'
+            + html.escape(article['source']) +
+            ' | ' + html.escape(article['date']) +
+            ' | Score: ' + str(article['score']) + '/100'
+            '</div>'
+            '</li>'
+        )
+
+        topic_tags = ''.join(
+            '<span>' + html.escape(topic) + '</span>'
+            for topic in article.get(
+                'topics',
+                ['General Silicone']
+            )
+        )
+
+        article_cards.append(
+            '<article class="article-card">'
+            '<div class="meta">'
+            + html.escape(article['source']) +
+            ' | ' + html.escape(article['date']) +
+            ' | <b>' + str(article['score']) + '/100</b>'
+            '</div>'
+            '<h2>' + html.escape(article['title']) + '</h2>'
+            '<div class="tags">' + topic_tags + '</div>'
+            '<p>' + html.escape(short_summary) + '</p>'
+            '<a href="' + html.escape(article['url']) + '" '
+            'target="_blank" rel="noopener">'
+            'Read source'
+            '</a>'
+            '</article>'
+        )
+
+    current_date = dt.date.today()
+    iso_calendar = current_date.isocalendar()
+
+    week = (
+        str(iso_calendar.year)
+        + '-W'
+        + str(iso_calendar.week).zfill(2)
+    )
+
+    template = (
+        ROOT / 'scripts' / 'template.html'
+    ).read_text(
+        encoding='utf-8'
+    )
+
+    page = (
+        template
+        .replace(
+            '{{TITLE}}',
+            settings['site_title']
+        )
+        .replace(
+            '{{WEEK}}',
+            week
+        )
+        .replace(
+            '{{COUNT}}',
+            str(len(top))
+        )
+        .replace(
+            '{{SUMMARY_LIST}}',
+            ''.join(summary_items)
+        )
+        .replace(
+            '{{CARDS}}',
+            ''.join(article_cards)
+        )
+    )
+
+    (
+        ROOT / 'docs' / 'index.html'
+    ).write_text(
+        page,
+        encoding='utf-8'
+    )
+
+    (
+        ROOT / 'data' / 'articles.json'
+    ).write_text(
+        json.dumps(
+            items,
+            ensure_ascii=False,
+            indent=2
+        ),
+        encoding='utf-8'
+    )
+
+    (
+        ROOT / 'data' / 'latest.json'
+    ).write_text(
+        json.dumps(
+            top,
+            ensure_ascii=False,
+            indent=2
+        ),
+        encoding='utf-8'
+    )
+
+    markdown_lines = [
+        '# ' + settings['site_title'] + ' ' + week,
+        '',
+        '## Weekly Article Summary',
+        ''
+    ]
+
+    for index, article in enumerate(top, start=1):
+        original_summary = article.get('summary', '').strip()
+
+        if original_summary:
+            markdown_summary = original_summary[:500]
+
+            if len(original_summary) > 500:
+                markdown_summary += '...'
+        else:
+            markdown_summary = (
+                'No abstract is available from the current source.'
+            )
+
+        markdown_lines.extend([
+            str(index) + '. [' + article['title'] + ']('
+            + article['url'] + ')',
+            '',
+            markdown_summary,
+            '',
+            '**Source:** ' + article['source']
+            + ' | **Date:** ' + article['date']
+            + ' | **Score:** ' + str(article['score'])
+            + '/100',
+            ''
+        ])
+
+    (
+        ROOT / 'weekly' / (week + '.md')
+    ).write_text(
+        '\n'.join(markdown_lines),
+        encoding='utf-8'
+    )
 def main():
     sources=load_yaml('sources.yml')['sources']; keywords=load_yaml('keywords.yml'); settings=load_yaml('settings.yml')
     gathered=[]
